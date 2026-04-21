@@ -60,7 +60,7 @@ sequenceDiagram
 
 ## 🔌 Endpoints
 
-### Validar Entrada de Estoque
+### Validar Entrada de Estoque.
 `POST /api/Carros/validar-estoque`
 
 Valida se um veículo atende aos requisitos para entrar no inventário de luxo.
