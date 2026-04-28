@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿﻿using Microsoft.AspNetCore.Mvc;
 using RunSpecification.Domain.Entities;
 using SeuProjeto.Domain.Validations;
 using System.Linq;
@@ -9,6 +9,13 @@ namespace SeuProjeto.API.Controllers
     [Route("api/[controller]")]
     public class CarrosController : ControllerBase
     {
+        private readonly CarroValidation _validador;
+
+        public CarrosController(CarroValidation validador)
+        {
+            _validador = validador;
+        }
+
         /// <summary>
         /// Valida se um carro pode ser aceito no inventário de luxo
         /// </summary>
@@ -17,9 +24,7 @@ namespace SeuProjeto.API.Controllers
         {
             if (carro == null) return BadRequest("Dados do carro não informados.");
 
-            var validador = new CarroValidation();
-
-            var resultado = validador.Validate(carro);
+            var resultado = _validador.Validate(carro);
 
             if (!resultado.IsValid)
             {

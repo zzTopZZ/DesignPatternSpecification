@@ -1,50 +1,51 @@
 # Estoque API - Design Pattern Specification
 
-Este projeto é uma API de exemplo desenvolvida em .NET 8 para demonstrar a implementação do **Specification Pattern** no contexto de validação de regras de negócio 
-para um inventário de veículos de luxo.
+Esta API foi desenvolvida em **.NET 8** para demonstrar a implementação profissional do **Specification Pattern**, utilizando a biblioteca `NetDevPack`. O foco é o desacoplamento de regras de negócio complexas da camada de infraestrutura.
 
-## 🚀 Objetivo
+## 🧠 O que é o Specification Pattern?
 
-O objetivo principal é separar a lógica de negócio (regras de validação) da infraestrutura e dos controladores, permitindo que as regras sejam reutilizáveis, 
-testáveis e fáceis de manter através do uso de *Specifications*.
+O **Specification Pattern** é um padrão de projeto comportamental onde as regras de negócio são encapsuladas em classes individuais. 
+
+### Vantagens:
+- **Reutilização**: Uma regra (ex: `CarroDeLuxoSpec`) pode ser usada em validações, filtros de banco de dados ou seleções em memória.
+- **Testabilidade**: É possível criar testes unitários para cada regra isoladamente.
+- **Composição**: Regras podem ser combinadas usando operadores lógicos (AND, OR, NOT).
+- **Legibilidade**: O código reflete a linguagem ubíqua do negócio.
 
 ## 🛠 Tecnologias Utilizadas
 
 - **C# / .NET 8**
 - **ASP.NET Core Web API**
-- **Swagger (Swashbuckle)** para documentação da API
-- **Specification Pattern** para encapsulamento de regras de negócio
+- **NetDevPack**: Framework para auxiliar na implementação de conceitos de DDD e Specification.
+- **Swagger**: Documentação interativa.
 
 ## 📌 Estrutura do Projeto
 
-- `Controllers/`: Contém o `CarroController`, que recebe as requisições e delega a validação.
-- `Domain/Entities/`: Contém a entidade `Carro`.
-- `Domain/Validations/`: Contém a classe `CarroValidation` e as implementações das regras de negócio (Specifications).
+O projeto segue uma estrutura baseada em Domain-Driven Design (DDD):
+
+- **`RunSpecification/Controllers`**: Camada de entrada que recebe as requisições e retorna os status HTTP.
+- **`RunSpecification.Domain/Entities`**: Objetos de valor e entidades (ex: `Carro`).
+- **`RunSpecification.Domain/Specs`**: Onde a lógica reside. Cada classe herda de `Specification<T>` e define uma regra única.
+- **`RunSpecification.Domain/Validations`**: O `SpecValidator` agrupa as `Specs` e define as mensagens de erro amigáveis.
 
 ## 🔄 Fluxo de Validação (Sequence Diagram)
-
-Abaixo está o fluxo de como a requisição é processada utilizando o Specification Pattern:
 
 ```mermaid
 sequenceDiagram
     participant U as Usuário/Cliente
     participant C as CarrosController
     participant V as CarroValidation
-    participant S as Specifications (Business Rules)
+    participant S as Specifications
 
     U->>C: POST /api/Carros/validar-estoque
-    C->>V: new CarroValidation()
-    C->>V: Validate(carro)
+    C->>V: Injeta CarroValidation
+    C->>V: .Validate(carro)
     loop Para cada especificação
-        V->>S: IsSatisfiedBy(carro)
+        V->>S: ToExpression() / IsSatisfiedBy()
         S-->>V: Resultado (Bool)
     end
     V-->>C: ValidationResult (Errors/IsValid)
-    alt Se válido
-        C-->>U: 200 OK (Sucesso)
-    else Se inválido
-        C-->>U: 400 BadRequest (Lista de Erros)
-    end
+    C-->>U: Resposta JSON (200 ou 400)
 ```
 
 ## � Como Executar
