@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "AmDq+FYa1OI=",
+  "success": true,
+  "projectFilePath": "F:\\Renato\\Projetos\\DesignPatternSpecification\\RunSpecification.Domain\\RunSpecification.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\netdevpack\\8.0.2\\netdevpack.8.0.2.nupkg.sha512",
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\netdevpack.simplemediator\\1.1.0\\netdevpack.simplemediator.1.1.0.nupkg.sha512",
+    "C:\\Users\\Renato Souza\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Estoque API - Design Pattern Specification",
+    "description": "**Specification Pattern - API**",
+    "contact": {
+      "name": "Renato Souza",
+      "url": "https://escoladev.com.br",
+      "email": "renatozz@gmail.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Carros/validar-estoque": {
+      "post": {
+        "tags": [
+          "Carros"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carro"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carro"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Carro": {
+        "type": "object",
+        "properties": {
+          "anoModelo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cor": {
+            "$ref": "#/components/schemas/Cor"
+          },
+          "carroceria": {
+            "$ref": "#/components/schemas/Carroceria"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Carroceria": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Cor": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  }
+}

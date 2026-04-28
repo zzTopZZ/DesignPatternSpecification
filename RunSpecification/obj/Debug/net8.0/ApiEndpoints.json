@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "SeuProjeto.API.Controllers.CarrosController",
+    "Method": "ValidarEntradaEstoque",
+    "RelativePath": "api/Carros/validar-estoque",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carro",
+        "Type": "RunSpecification.Domain.Entities.Carro",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

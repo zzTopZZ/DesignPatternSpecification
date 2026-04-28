@@ -1,0 +1,13 @@
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\bin\Debug\net8.0\RunSpecification.Domain.deps.json
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\bin\Debug\net8.0\RunSpecification.Domain.dll
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\bin\Debug\net8.0\RunSpecification.Domain.pdb
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.csproj.AssemblyReference.cache
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.AssemblyInfoInputs.cache
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.AssemblyInfo.cs
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.csproj.CoreCompileInputs.cache
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.sourcelink.json
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.dll
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\refint\RunSpecification.Domain.dll
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\RunSpecification.Domain.pdb
+F:\Renato\Projetos\DesignPatternSpecification\RunSpecification.Domain\obj\Debug\net8.0\ref\RunSpecification.Domain.dll
