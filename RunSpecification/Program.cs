@@ -2,6 +2,8 @@ using SeuProjeto.Domain.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var urlEscolar = builder.Configuration["Url_Escola"];
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -19,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
         {
             Name = "Renato Souza",
             Email = "renatozz@gmail.com",
-            Url = new Uri("https://escoladev.com.br")  //Não existe, é só um exemplo
+            Url = new Uri(urlEscolar)  //Não existe, é só um exemplo
         }
     });
 });
