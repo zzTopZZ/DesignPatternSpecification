@@ -20,9 +20,12 @@ namespace SeuProjeto.API.Controllers
         /// Valida se um carro pode ser aceito no inventário de luxo
         /// </summary>
         [HttpPost("validar-estoque")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult ValidarEntradaEstoque([FromBody] Carro carro)
         {
-            if (carro == null) return BadRequest("Dados do carro não informados.");
+            if (carro == null)
+                return BadRequest("Dados do carro não informados.");
 
             var resultado = _validador.Validate(carro);
 
@@ -36,7 +39,7 @@ namespace SeuProjeto.API.Controllers
                 });
             }
 
-            // 4. Se passou em todas as Specs
+            // Se passou em todas as Specs
             return Ok(new
             {
                 sucesso = true,
